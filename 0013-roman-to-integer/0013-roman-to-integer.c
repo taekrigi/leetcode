@@ -1,4 +1,4 @@
-int romanDigit(char c) {
+int changeRomanToDigit(char c) {
     switch (c) {
       case 'I': return 1;
       case 'V': return 5;
@@ -14,8 +14,8 @@ int romanDigit(char c) {
 int romanToInt(const char *s) {
     int sum = 0;
     while (*s) {
-        int digit = romanDigit(*s++);
-        int next = romanDigit(*s);
+        int digit = changeRomanToDigit(*s++);
+        int next = changeRomanToDigit(*s);
         if (digit && digit < next) {
             sum += next - digit;
             s++;
